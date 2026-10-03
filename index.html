@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>little game</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <button id="muteVol" onclick="muteVolume()">Mute Volume</button>
+        
+        <h1 id="pageTitle"><mark>little game</mark></h1>
+        <h2>THIS IS AN INTERACTIVE GAME</h2>
+
+        <hr>
+
+        <p>This is a <mark>MARKED Paragraph test</mark></p>
+
+        <hr>
+
+        <button id="myButton" onclick="myFunction()">Click me</button>
+        <progress value="0" max="100" id="myProgress"></progress>
+    </body>
+
+<script>
+    // Define the audio object globally so both functions control the exact same sound
+    var globalAudio = new Audio('horse.mp3');
+
+    function muteVolume() {
+        // Toggle the global audio mute state
+        globalAudio.muted = !globalAudio.muted;
+        
+        var muteButton = document.getElementById("muteVol");
+        muteButton.textContent = globalAudio.muted ? "Unmute Volume" : "Mute Volume";
+    }
+
+    function myFunction() {
+        var progressBar = document.getElementById("myProgress");
+        
+        if (progressBar.value < 100) {
+            progressBar.value += 1;
+        }
+        if (progressBar.value < 200) {
+            progressBar.value += 1;
+            progressBar.max += 1;
+        }
+
+        // Trigger win state exactly when it hits 100
+        if (progressBar.value === 100) {
+            document.getElementById("pageTitle").innerHTML = "<mark>YOU WIN</mark>";
+        }
+
+        // Redirect when it reaches 200
+        if (progressBar.value >= 200) {
+            window.location.href = "youfoundit.html";
+        }
+         
+        // Restart and play the exact same global audio instance
+        globalAudio.currentTime = 0;
+        globalAudio.play().catch(function(error) {
+            console.log("Playback blocked or failed: ", error);
+        });
+    }
+</script>
+</html>

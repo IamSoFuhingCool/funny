@@ -1,0 +1,60 @@
+body {
+    background-color: #000000;
+}
+h1 {
+    color: #F0F0F0;
+    text-align: center;
+}
+h2 {
+    color: #e6e6e6;
+    text-align: center;
+}
+
+h3 {
+    color: #929292;
+    text-align: center;
+}
+
+p {
+    color: #FFFFFF;
+    text-align:center;
+}
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+mark {
+    color: darkgray;
+    background-color: #3d4c61;
+}
+
+button {
+    display: block;
+    margin: 4px auto; /* 4px top/bottom, auto left/right centers it */
+    background-color: #2f5c9b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+input {
+    display: block;
+    margin: 4px auto; /* 4px top/bottom, auto left/right centers it */
+    padding: 10px;
+    border-radius: 10px;
+}
+        #secret-content {
+            display: none;
+            margin-top: 20px;
+            color: green;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
